@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cd /tmp
+wget https://releases.rancher.com/cli/$RANCHER_CLI_VERSION/rancher-linux-amd64-$RANCHER_CLI_VERSION.tar.gz
+
+tar -xvf rancher-linux-amd64-$RANCHER_CLI_VERSION.tar.gz
+rm rancher-linux-amd64-$RANCHER_CLI_VERSION.tar.gz
+
+mv ./rancher-$RANCHER_CLI_VERSION/rancher /usr/local/bin/rancher
+rm -rf ./rancher-$RANCHER_CLI_VERSION
+
+chmod +x /usr/local/bin/rancher
